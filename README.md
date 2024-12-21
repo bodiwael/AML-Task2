@@ -7,34 +7,13 @@ This project demonstrates solving the two-dimensional heat equation using the **
 
 ## Problem Description
 
-The 2D heat equation is given by:
-
-```
-∂T/∂t = α (∂²T/∂x² + ∂²T/∂y²)
-```
-
-Where:
-- **T(x, y, t):** Temperature at position (x, y) and time t.
-- **α:** Thermal diffusivity.
-
 The computational domain is initialized with uniform **boundary conditions**, and a **hot spot** is introduced at the center. The simulation evolves the **temperature distribution** over time.
 
 ---
 
 ## Numerical Method
 
-The **finite difference method (FDM)** discretizes the heat equation. The spatial derivatives are approximated using **central differences**, and the time derivative is handled using **explicit forward differences**. The discrete form is:
-
-```
-T(i, j, n+1) = T(i, j, n) + Δtα
-[ (T(i+1, j, n) - 2T(i, j, n) + T(i-1, j, n)) / Δx² +
-  (T(i, j+1, n) - 2T(i, j, n) + T(i, j-1, n)) / Δy² ]
-```
-
-Where:
-- **Δt, Δx, Δy:** Time step and spatial grid sizes.
-
----
+The **finite difference method (FDM)** discretizes the heat equation. The spatial derivatives are approximated using **central differences**, and the time derivative is handled using **explicit forward differences**. 
 
 ## Implementation Details
 
@@ -55,16 +34,10 @@ Dirichlet boundary conditions are applied, maintaining constant temperatures of 
 ### Stability Constraint
 Stability is ensured by satisfying the **Courant-Friedrichs-Lewy (CFL)** condition:
 
-```
-Δt ≤ (Δx²Δy²) / [2α(Δx² + Δy²)]
-```
-
----
-
 ## Results
 
 ### Simulation Outputs
-![Figure 1: Final temperature distribution after 5000 time steps.](path/to/image.png)
+![Figure 1: Final temperature distribution after 5000 time steps.](final_temperature_distribution.png)
 
 ### Animation
 An animation of the temperature evolution highlights the **heat diffusion dynamics** and smoothing effects as temperature stabilizes.
